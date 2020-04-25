@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{fragments/main_layout}">
+
+<head>
+    <title>Corona Virus Application</title>
+</head>
+
+<body>
+<div layout:fragment="content" class="container">
+    <h1>Corona Virus Tracker Application</h1>
+    <p>Below you can find about number of confirmed cases reported globally</p>
+
+    <div class="jumbotron">
+        <h1 class="display-4" th:text="${totalConfirmedCases}"></h1>
+        <p class="lead">Total confirmed cases reported.</p>
+        <hr class="my-4">
+        <p>
+            <span>New confirmed cases reported since previous day: </span>
+            <span th:text="${dailyConfirmedCases}"></span>
+        </p>
+    </div>
+
+    <table id="example" class="table table-striped table-dark" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>State</th>
+            <th>Country</th>
+            <th>Today Confirmed Cases</th>
+            <th>Latest Confirmed Total Cases</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th>State</th>
+            <th>Country</th>
+            <th>Today Confirmed Cases</th>
+            <th>Latest Confirmed Total Cases</th>
+        </tr>
+        </tfoot>
+        <tbody>
+        <tr th:each="confirmedLocationStat : ${confirmedLocationStats}">
+            <td th:text="${confirmedLocationStat.state}"></td>
+            <td th:text="${confirmedLocationStat.country}"></td>
+            <td th:text="${confirmedLocationStat.currentConfirmedCases}">0</td>
+            <td th:text="${confirmedLocationStat.latestConfirmedTotalCases}">0</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+
+</html>
