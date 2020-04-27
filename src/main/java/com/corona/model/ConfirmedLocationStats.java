@@ -6,8 +6,6 @@ public class ConfirmedLocationStats {
     private String country;
     private int latestConfirmedTotalCases;
     private int currentConfirmedCases;
-    private int latestDeathTotalCases;
-    private int currentDeathCases;
 
     public String getState() {
         return state;
@@ -39,22 +37,6 @@ public class ConfirmedLocationStats {
 
     public void setCurrentConfirmedCases(int currentConfirmedCases) {
         this.currentConfirmedCases = currentConfirmedCases;
-    }
-
-    public int getLatestDeathTotalCases() {
-        return latestDeathTotalCases;
-    }
-
-    public void setLatestDeathTotalCases(int latestDeathTotalCases) {
-        this.latestDeathTotalCases = latestDeathTotalCases;
-    }
-
-    public int getCurrentDeathCases() {
-        return currentDeathCases;
-    }
-
-    public void setCurrentDeathCases(int currentDeathCases) {
-        this.currentDeathCases = currentDeathCases;
     }
 
     @Override
